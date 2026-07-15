@@ -1,0 +1,432 @@
+:root {
+    --color-primario: #2b1810; /* Chocolate oscuro elegante, menos agresivo que el negro puro */
+    --color-secundario: #42281d; 
+    --color-acento: #e5b842; /* Dorado más vivo, cálido y brillante */
+    --color-acento-hover: #c99c27;
+    --color-fondo: #fdfcfb; 
+    --color-texto: #3a302c;
+    --fuente-titulos: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Plus Jakarta Sans', sans-serif;
+    --sombra-premium: 0 15px 35px rgba(66, 40, 29, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* PORTADA PRINCIPAL VIVA Y ACOGEDORA */
+.portada-premium {
+    position: relative;
+    height: 100vh;
+    /* Fondo con luces bokeh cálidas, elegante y con mucha vida */
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.capa-calida {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Degradado ámbar/chocolate para avivar los colores sin oscurecer de forma agresiva */
+    background: linear-gradient(135deg, rgba(43, 24, 16, 0.65) 0%, rgba(20, 10, 5, 0.85) 100%);
+    z-index: 1;
+}
+
+.contenido-portada {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding: 0 20px;
+    max-width: 850px;
+}
+
+.logo-portada {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.5));
+    animation: fadeIn 1.5s ease;
+}
+
+/* TÍTULO EN MAYÚSCULAS: DORADO VIVO CON DELINEADO NEGRO EQUILIBRADO */
+.contenido-portada h1.titulo-dorado-negro {
+    font-family: var(--fuente-titulos);
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--color-acento); /* Dorado vivo */
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    /* Delineado negro limpio que hace resaltar las letras sobre el fondo vivo */
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+         0px  6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.linea-decorativa {
+    width: 100px;
+    height: 2px;
+    background-color: var(--color-acento);
+    margin: 0 auto 25px auto;
+}
+
+/* Frase llamativa */
+.frase-llamativa {
+    font-family: var(--fuente-titulos);
+    font-size: 2.1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.btn-premium-descubrir {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid var(--color-acento);
+    padding: 14px 40px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.btn-premium-descubrir:hover {
+    background-color: var(--color-acento);
+    color: var(--color-primario);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(229, 184, 66, 0.3);
+}
+
+/* SECCIÓN MENÚ */
+.seccion-menu-premium {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 90px 20px;
+}
+
+.cabecera-seccion {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecera-seccion h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 3rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.cabecera-seccion p {
+    font-size: 1rem;
+    color: #7c6e6a;
+}
+
+/* FILTROS */
+.filtros-premium {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #7c6e6a;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-family: var(--fuente-cuerpo);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-filtro.activo, .btn-filtro:hover {
+    color: var(--color-primario);
+    border-bottom-color: var(--color-acento);
+}
+
+/* DISTRIBUCIÓN */
+.disposicion-web {
+    display: grid;
+    grid-template-columns: 1.9fr 1.1fr;
+    gap: 40px;
+}
+
+@media (max-width: 1024px) {
+    .disposicion-web {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* REJILLA PRODUCTOS */
+.rejilla-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-content: start;
+}
+
+.tarjeta-premium-producto {
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #f0ede9;
+    box-shadow: var(--sombra-premium);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-premium-producto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-acento);
+}
+
+.tarjeta-premium-producto h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.tarjeta-premium-producto p {
+    font-size: 0.9rem;
+    color: #7c6e6a;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.contenedor-compra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f5f2ef;
+    padding-top: 15px;
+}
+
+.contenedor-compra .precio-tag {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.btn-añadir-orden {
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-añadir-orden:hover {
+    background: var(--color-acento);
+    color: var(--color-primario);
+}
+
+/* PANEL DEL CARRITO */
+.panel-pedido {
+    background: #ffffff;
+    border: 1px solid #e8e4df;
+    padding: 30px;
+    box-shadow: var(--sombra-premium);
+    height: fit-content;
+    position: sticky;
+    top: 40px;
+}
+
+.cabecera-pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--color-primario);
+    margin-bottom: 20px;
+}
+
+.marca-carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.cabecera-pedido h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    color: var(--color-primario);
+}
+
+.badge {
+    background-color: var(--color-acento);
+    color: var(--color-primario);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.lista-pedido-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.item-pedido-activo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f2ef;
+    font-size: 0.95rem;
+}
+
+.btn-sacar-item {
+    background: none;
+    border: none;
+    color: #cc4444;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.pedido-vacio {
+    text-align: center;
+    color: #aaa29f;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.resumen-pedido {
+    background: #faf9f7;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.fila-resumen {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.fila-resumen.total {
+    border-top: 1px solid #e8e4df;
+    padding-top: 10px;
+    margin-top: 5px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primario);
+}
+
+.gratis {
+    color: #449944;
+    font-weight: 600;
+}
+
+/* FORMULARIO Y VALIDACIÓN */
+.formulario-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-input label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-primario);
+}
+
+.grupo-input input {
+    padding: 12px;
+    border: 1px solid #ccc7c2;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.grupo-input input:focus {
+    border-color: var(--color-acento);
+}
+
+.nota-validacion {
+    font-size: 0.75rem;
+    color: #b83b1d;
+}
+
+.btn-enviar-wa {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-enviar-wa:hover {
+    background-color: #1ebe57;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-primario);
+    color: #a4908a;
+    font-size: 0.85rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

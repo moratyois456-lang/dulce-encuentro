@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Encuentro - Espinar</title>
+    
+    <!-- Tipografías de Alta Costura y Legibilidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Librería de Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Vinculación del archivo de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- PORTADA PRINCIPAL VIVA Y SOFISTICADA -->
+    <section class="portada-premium">
+        <div class="capa-calida"></div>
+        <div class="contenido-portada">
+            <!-- Espacio optimizado para tu logotipo -->
+            <img src="logo.png" alt="Logo Dulce Encuentro" class="logo-portada">
+            
+            <!-- Título en Mayúsculas con Estilo Dorado Brillante y Contorno Negro -->
+            <h1 class="titulo-dorado-negro">Dulce Encuentro</h1>
+            
+            <div class="linea-decorativa"></div>
+            
+            <!-- Eslogan que conecta emocionalmente -->
+            <p class="frase-llamativa">"Donde cada aroma despierta un recuerdo y cada sabor es un dulce encuentro"</p>
+            
+            <!-- Botón de anclaje suave hacia la carta -->
+            <a href="#experiencia-menu" class="btn-premium-descubrir">
+                <span>Explorar la Carta</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE LA CARTA Y COMPRAS -->
+    <section id="experiencia-menu" class="seccion-menu-premium">
+        
+        <div class="cabecera-seccion">
+            <h2>Nuestra Experiencia Gastronómica</h2>
+            <p>Selecciona tus especialidades favoritas y procesa tu pedido directo a nuestra cocina</p>
+        </div>
+
+        <!-- Filtros de Categorías Dinámicos -->
+        <nav class="filtros-premium">
+            <button onclick="filtrarMenu('cafes')" class="btn-filtro activo">
+                <i class="fa-solid fa-mug-hot"></i> Cafetería & Filtrados
+            </button>
+            <button onclick="filtrarMenu('salchipapas')" class="btn-filtro">
+                <i class="fa-solid fa-utensils"></i> Salchipapas Premium
+            </button>
+            <button onclick="filtrarMenu('postres')" class="btn-filtro">
+                <i class="fa-solid fa-cake-candles"></i> Pastelería Fina
+            </button>
+        </nav>
+
+        <!-- Arquitectura Web en Dos Columnas (Catálogo + Carrito Fijo) -->
+        <div class="disposicion-web">
+            
+            <!-- Rejilla Inyectada Dinámicamente por JavaScript -->
+            <main class="rejilla-productos" id="catalogo-productos">
+                <!-- Los items se auto-generan aquí -->
+            </main>
+
+            <!-- Panel Lateral de Pedido (Estilo Boleta Fina Estacionaria) -->
+            <aside class="panel-pedido">
+                <div class="cabecera-pedido">
+                    <div class="marca-carrito">
+                        <img src="logo.png" alt="Mini Logo" class="mini-logo">
+                        <h3>Tu Orden actual</h3>
+                    </div>
+                    <span id="contador-items-badge" class="badge">0</span>
+                </div>
+                
+                <!-- Contenedor con Scroll para no romper el diseño si añaden muchos platos -->
+                <div id="lista-pedido" class="lista-pedido-scroll">
+                    <p class="pedido-vacio">Aún no has añadido delicias a tu orden.</p>
+                </div>
+
+                <!-- Desglose de Caja -->
+                <div class="resumen-pedido">
+                    <div class="fila-resumen">
+                        <span>Subtotal</span>
+                        <span id="subtotal-pago">S/. 0.00</span>
+                    </div>
+                    <div class="fila-resumen envio">
+                        <span>Destino (Espinar)</span>
+                        <span class="gratis">¡Mesa / Delivery!</span>
+                    </div>
+                    <div class="fila-resumen total">
+                        <span>Total a Pagar</span>
+                        <span id="total-pago">S/. 0.00</span>
+                    </div>
+                </div>
+
+                <!-- Formulario de Recopilación y Seguridad Inteligente -->
+                <div class="formulario-pedido">
+                    <div class="grupo-input">
+                        <label for="cliente-nombre">¿A nombre de quién registramos?</label>
+                        <input type="text" id="cliente-nombre" placeholder="Ej. Alejandro Choque" autocomplete="off">
+                    </div>
+                    
+                    <div class="grupo-input">
+                        <label for="cliente-direccion">Dirección de entrega o N° Mesa 📍</label>
+                        <input type="text" id="cliente-direccion" placeholder="Ej. Av. Central 415 / Mesa 3" autocomplete="off">
+                        <small class="nota-validacion">
+                            *Por seguridad de entrega, es obligatorio especificar el número de mesa o incluir la palabra 'Espinar'.*
+                        </small>
+                    </div>
+
+                    <!-- Disparador de API de WhatsApp -->
+                    <button onclick="procesarPedidoWhatsApp()" class="btn-enviar-wa">
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar y Enviar Pedido
+                    </button>
+                </div>
+            </aside>
+            
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="contenido-footer">
+            <p>© 2026 Dulce Encuentro — Alta Cafetería & Repostería. Espinar, Cusco.</p>
+            <p class="sub-footer">Desarrollado para una experiencia fluida de atención al cliente.</p>
+        </div>
+    </footer>
+
+    <!-- Vinculación del script lógico -->
+    <script src="script.js"></script>
+</body>
+</html>
